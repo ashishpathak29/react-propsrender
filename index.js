@@ -2,23 +2,26 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
 import './style.css';
+import React, { Component, Fragment } from 'react'
+import State from './Components/State';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'My Name is Ashish'
+      name: 'React'
     };
   }
 
   render() {
     return (
-      <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
+      <Fragment>
+      <State initial={{loading: false, data: null}}>
+         {() => {
+           return <div>Heelo</div>
+         }}
+      </State>
+      </Fragment>
     );
   }
 }
