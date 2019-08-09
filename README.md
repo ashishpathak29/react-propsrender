@@ -1,3 +1,3 @@
-# react-cjqlbv
+# react-propsrender
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-cjqlbv)
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-propsrender)
