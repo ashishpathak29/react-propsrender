@@ -26,22 +26,17 @@ class App extends Component {
       <List initial ={["Apple","Banana"]}>
       {({list, pull, push}) =>(
           <Fragment>
-        <div>
-        <ul>{list.map((l,i) => <li onClick={() =>{
-            pull((listItem, index) =>{
-              return i === index
-            })
-
-        }} key={i}>{l}</li>)}</ul>
-        </div>
-        <form onSubmit = {(e) =>{
-          e.preventDefault();
-          push(this.textRef.value)
-          this.textRef.value = ""
-          }}>
-        <input ref={(node)=>this.textRef = node} type ="text" />
-        <button type="submit">Add Todo</button>
-        </form>
+            <div>
+            <ul>{list.map((l,i) => <li onClick={() =>{pull((listItem, index) =>{          return i === index})}} key={i}>{l}</li>)}</ul>
+            </div>
+          <form onSubmit = {(e) =>{
+                e.preventDefault();
+                push(this.textRef.value)
+                this.textRef.value = ""
+                }}>
+              <input ref={(node)=>this.textRef = node} type ="text" />
+              <button type="submit">Add Todo</button>
+          </form>
           </Fragment>
       )}
       </List>

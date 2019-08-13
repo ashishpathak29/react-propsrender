@@ -8,12 +8,13 @@ class List extends React.Component{
 
   push =(newValue) => {
     this.setState({
-      list:[...this.state.list, newVlaue]
+     // list:[...this.state.list, newVlaue]
+     list:this.state.list.concat(newValue)
     })
   }
 
   pull =(fn) =>{
-    const mewList = this.state.list.filter((listItem,index) => {
+    const newList = this.state.list.filter((listItem,index) => {
       return !fn(listItem, index)
     })
     this.setState({list: newList})
